@@ -1,0 +1,14 @@
+.mycollections{
+    word-wrap: break-word;
+}
+.mycollections .list-group{
+    overflow-x: hidden;
+    overflow-y: scroll;
+    height:500px;
+}
+.card{
+word-wrap: break-word;    
+}
+
+.card-link{
+}
