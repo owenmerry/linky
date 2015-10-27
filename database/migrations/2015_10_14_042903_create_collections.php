@@ -34,7 +34,7 @@ class CreateCollections extends Migration
             $table->timestamps();
         });
         
-        Schema::create('privacy', function (Blueprint $table) {
+        Schema::create('privacies', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
             $table->timestamps();
