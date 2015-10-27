@@ -16,6 +16,9 @@ class CreateCollectionTable extends Migration
             $table->increments('id');
             $table->string('url')->unique();
             $table->integer('user_id');
+            $table->string('title');
+            $table->string('description');
+            $table->string('image');
             $table->timestamps();
         });
     }
