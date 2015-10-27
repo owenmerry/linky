@@ -17,6 +17,9 @@ class CreateCollections extends Migration
             $table->string('name');
             $table->integer('privacy_id');
             $table->integer('seq');
+            $table->string('title');
+            $table->string('description');
+            $table->string('image');
             $table->timestamps();
         });
         
