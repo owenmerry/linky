@@ -18,6 +18,7 @@
        <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".editcollection_{{$collection->id}}">Edit</button>   
         <div><i>Last added to {{$collection->linkLastAdded()}}</i></div>
         <div><i>Shared {{$collection->collectionShared()}}</i></div>
+      <div><i>Privacy: {{$collection->privacy->name}}</i></div>
     </div>
   
 </div>     
