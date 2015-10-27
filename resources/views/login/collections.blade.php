@@ -16,7 +16,8 @@
       <h6>{{$collection->name}}({{$collection->link->count()}})</h6>
        <a href="{{route('login.collections_det',$collection->id)}}" class="btn btn-primary" >View</a>
        <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".editcollection_{{$collection->id}}">Edit</button>   
-       
+        <div><i>Last added to {{$collection->linkLastAdded()}}</i></div>
+
     </div>
   
 </div>     
