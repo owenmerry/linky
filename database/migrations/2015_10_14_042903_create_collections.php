@@ -15,8 +15,8 @@ class CreateCollections extends Migration
         Schema::create('collections', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
-            $table->integer('privacy_id');
-            $table->integer('seq');
+            $table->integer('privacy_id')->default(1);
+            $table->integer('seq')->default(10);
             $table->timestamps();
         });
         
@@ -51,6 +51,6 @@ class CreateCollections extends Migration
         Schema::drop('collections');
         Schema::drop('collection_user');
         Schema::drop('collection_link');
-        Schema::drop('privacy');
+        Schema::drop('privacies');
     }
 }
