@@ -88,6 +88,7 @@ for ($i = 0; $i < $image_list->length; $i++)
     //$image = $image_list->length;
  
         $data = [
+            'url'=>$url,
             'title'=>$title,
             'description'=>$description,
             'image'=>$image,

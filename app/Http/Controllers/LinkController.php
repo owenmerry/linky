@@ -13,39 +13,65 @@ use App\Models\Collection\Website;
 class LinkController extends Controller {
     
     function postAddlink(Request $request){
+
+        //variables
+        $url=$request['url'];
+        $user_id=Auth::user()->id;
+        $title="";
+        $description="";
+        $image="";
         
+        //validate
         $this->validate($request, [
             'url' => 'required',
         ]);
         
-        if($request['link_mode']){
+        //preview
+        if($request['link_mode']=='preview'){
             return $this->postLinkPreview($request['url']);
         }
         
+        //get data
+        if($request['link_mode']==''){
+            $getwebdata = Website::getWebsiteData($request['url']); 
+
+            $title=$getwebdata['title'];
+            $description=$getwebdata['description'];
+            $image=$getwebdata['image'];
+        }
         
-       $getwebdata = Website::getWebsiteData($request['url']);  
+        //form data
+        if($request['link_mode']=='insert'){
+            $title=$request['title'];
+            $description=$request['description'];
+            $image=$request['image'];
+        }
         
         
+        //add values
         $input = 
         [
-            'url' => $request['url'],
-            'user_id' => Auth::user()->id,
-            'title' => $getwebdata['title'],
-            'description' => $getwebdata['description'],
-            'image' => $getwebdata['image'],
+            'url' => $url,
+            'user_id' => $user_id,
+            'title' => $title,
+            'description' => $description,
+            'image' => $image,
         ];
         
-       $link_create = Link::create($input); 
+        //create
+        $link_create = Link::create($input); 
         $link_info='Link added';
         
+        //add to collection
         if($request['collection_id']){
         $collection = Collection::find($request['collection_id']);
         $collection->link()->attach($link_create->id);
         $link_info='Link added to '. $collection->name .' collection';
         }
         
-        return back()
-            ->with('info','Link added')
+        //return back()
+        return redirect()->route('login.recents')
+            ->with('info',$link_info)
             ->with('info_type','success');
     }
     
