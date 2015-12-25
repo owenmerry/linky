@@ -7,25 +7,22 @@
 <div class="col-md-12 mylinks"> 
 <h3>{{$user->name}}'s Collections</h3>
 
-@foreach($user->link as $link)
-<div class="col-md-4">
+@foreach($user->collection as $collection)
+<div class="col-md-3">
 <div class="panel panel-default">
-<!-- List group -->   
-      <div class="panel-body">
-          <?php echo \Carbon\Carbon::createFromTimeStamp(strtotime($link->created_at))->diffForHumans() ?>
-          <a href="{{$link->url}}" target="_blank">
-              <img style="width:100%;" src="{{$link->image}}" />
-              <div><b>{{$link->title}}</b></div>
-          {{$link->description}}  
-              <div><small>{{$link->url}}</small></div>
-          </a>
-
-
-      </div>
+  <!-- Default panel contents -->
+  <div class="panel-body"> 
+      <h6>{{$collection->name}}({{$collection->link->count()}})</h6>
+       <a href="{{route('login.collections_det',$collection->id)}}" class="btn btn-primary" >View</a>  
+        <div><i>Last added to {{$collection->linkLastAdded()}}</i></div>
+        <div><i>Shared {{$collection->collectionShared()}}</i></div>
+      <div><i>Privacy: {{$collection->privacy->name}}</i></div>
+    </div>
+  
 </div>     
-</div>  
+</div>   
     
-@endforeach    
+@endforeach      
     
 </div>
 

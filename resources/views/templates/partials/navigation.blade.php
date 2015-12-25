@@ -14,6 +14,7 @@
             @if(Auth::check())
               <li><a href="{{route('login.recents')}}">My Links</a></li>
               <li><a href="{{route('login.collections')}}">Collections</a></li>
+              <li><a href="{{route('login.friends')}}">Friends</a></li>
               <!--<li><a href="{{route('login.friends')}}">Friends</a></li>-->
             @else
               <li><a href="{{route('home')}}">Home</a></li>
