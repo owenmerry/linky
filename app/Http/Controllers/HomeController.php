@@ -32,12 +32,14 @@ class HomeController extends Controller {
         $user = User::find(Auth::user()->id); 
         $links = Link::UserRecentLinks();
         $collections = User::find(Auth::user()->id)->collection()->orderBy('id','DESC')->get();
+        $privacy = Privacy::all();
         $link_edit=true;
          return view('login.recents')
             ->with('collections',$collections)
             ->with('links',$links)
             ->with('user',$user)
-            ->with('link_edit',$link_edit);
+            ->with('link_edit',$link_edit)
+            ->with('privacy',$privacy);
     }  
     
     function getCollections(){
@@ -54,10 +56,12 @@ class HomeController extends Controller {
         $collection = Collection::find($collectionid);
         $collections = User::find(Auth::user()->id)->collection()->orderBy('id','DESC')->get();
         $links = Collection::find($collectionid)->link()->orderBy('id','DESC')->get();
+        $privacy = Privacy::all();
         return view('login.collections_det')
             ->with('links',$links)
             ->with('collections',$collections)
-            ->with('collection',$collection);
+            ->with('collection',$collection)
+            ->with('privacy',$privacy);
     }
     
     function getBrowse(){
@@ -86,12 +90,14 @@ class HomeController extends Controller {
         $user = User::find($user_id);
         $links = Link::where('user_id',$user_id)->orderBy('id','DESC')->get();
         $collections = User::find(Auth::user()->id)->collection()->orderBy('id','DESC')->get();
+        $privacy = Privacy::all();
         $link_edit=false;
         return view('login.user.user_recents')
             ->with('collections',$collections)
             ->with('links',$links)
             ->with('user',$user)
-            ->with('link_edit',$link_edit);
+            ->with('link_edit',$link_edit)
+            ->with('privacy',$privacy);
     }
     
     function getUser_collections($user_id){

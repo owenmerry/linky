@@ -75,6 +75,29 @@ class LinkController extends Controller {
             ->with('info_type','success');
     }
     
+    
+    
+    function postEditLink(Request $request){
+        $this->validate($request,[
+        'title'=>'required',    
+        ]);
+        
+        $input = [
+            'title' => $request['title'],
+            'description' => $request['description'],
+            'privacy_id' => $request['privacy'],
+        ];
+
+        $link_edit = Link::find($request['linkid'])->update($input);
+
+        return back()
+            ->with('info','Link updated')
+            ->with('info_type','success');
+    
+     
+}    
+    
+    
        function postLinkPreview($url){ 
            
            $getwebdata = Website::getWebsiteData($url);  

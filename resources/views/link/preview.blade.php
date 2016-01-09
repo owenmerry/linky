@@ -7,9 +7,16 @@
 <h3>Link Preview</h3>
 
 <form method="post" action="{{route('link.addlink')}}">  
-<h5>Image</h5>  
- <img width="100px" src="{{$getwebdata['image']}}" />
+<h5>URL</h5>
+    <div>{{$getwebdata['url']}}</div>    
+<h5>Image</h5>
+
+
+@if($getwebdata['image'])    
+<img width="100px" src="{{$getwebdata['image']}}" />
+@endif
     
+@if($getwebdata['images'])    
 <h5>Images</h5>
 <select name="image">
     <option value="{{$getwebdata['image']}}">{{$getwebdata['image']}}</option>    
@@ -20,7 +27,9 @@
 @foreach ($getwebdata['images'] as $image)    
     <div><div>{{$image}}</div><img width="100px" src='{{$image}}' /></div>
 @endforeach    
+@endif
 
+    
 <h5>Title</h5>
 <input type="text" name="title" value="{{$getwebdata['title']}}" />
     

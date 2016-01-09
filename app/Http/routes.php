@@ -37,6 +37,7 @@ Route::get('/signout', ['as' => 'users.signout' ,'uses' => 'UserController@getSi
 /* Link */
 Route::post('/link', ['as' => 'link.addlink','uses' => 'LinkController@postAddlink']);
 Route::get('/link/preview', ['as' => 'link.preview','uses' => 'LinkController@postLinkPreview']);
+Route::post('/link/edit', ['as' => 'link.editlink','uses' => 'LinkController@postEditLink']);
 Route::get('/link/add/{linkid}/collection/{collectionid}', ['as' => 'link.addlinktocollection','uses' => 'LinkController@getAddLinkToCollection']);
 Route::get('/link/delete/{linkid}', ['as' => 'link.deletelink','uses' => 'LinkController@getDeleteLink']);
 

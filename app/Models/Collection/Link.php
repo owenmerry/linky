@@ -19,7 +19,7 @@ class Link extends Model
      *
      * @var array
      */
-    protected $fillable = ['url','user_id','title','description','image'];
+    protected $fillable = ['url','user_id','title','description','image','privacy_id'];
 
     /**
      * The attributes excluded from the model's JSON form.
@@ -29,6 +29,7 @@ class Link extends Model
     protected $hidden = [];  
     
     //Relationships
+    function privacy(){return $this->belongsTo('App\Models\Collection\Privacy','privacy_id');} 
     function user(){return $this->belongsTo('App\Models\Profile\User','user_id');} 
     function labels(){return $this->belongsToMany('App\Models\Collection\Label');} 
     
