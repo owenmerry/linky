@@ -148,7 +148,6 @@ return [
         
         'Illuminate\Html\HtmlServiceProvider',
 
-
     ],
 
     /*

@@ -8,33 +8,36 @@
 <div class="col-md-12 mycollections"> 
 <h4>My Collections</h4>
 
-@foreach($user->collection as $collection)
-<div class="col-md-3">
-<div class="panel panel-default">
-  <!-- Default panel contents -->
-  <div class="panel-body"> 
-      <h6>{{$collection->name}}({{$collection->link->count()}})</h6>
-       <a href="{{route('login.collections_det',$collection->id)}}" class="btn btn-primary" >View</a>
-       <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".editcollection_{{$collection->id}}">Edit</button>   
-        <div><i>Last added to {{$collection->linkLastAdded()}}</i></div>
-        <div><i>Shared {{$collection->collectionShared()}}</i></div>
-      <div><i>Privacy: {{$collection->privacy->name}}</i></div>
+
+    <div class="col-md-3">
+        <div class="panel panel-default">
+            <div class="panel-body text-center">
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".addcollection">Add Collection</button>       
+
+
+            </div>
+        </div>     
     </div>
-  
-</div>     
-</div>   
     
+    
+@foreach($user->collection as $collection)
+    <div class="col-md-3">
+        <div class="panel panel-default">
+            <!-- Default panel contents -->
+            <div class="panel-body"> 
+                <h6>{{$collection->name}}({{$collection->link->count()}})</h6>
+                <a href="{{route('login.collections_det',$collection->id)}}" class="btn btn-primary" >View</a>
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".editcollection_{{$collection->id}}">Edit</button>   
+                <div><i>Last added to {{$collection->linkLastAdded()}}</i></div>
+                <div><i>Shared {{$collection->collectionShared()}}</i></div>
+                <div><i>Privacy: {{$collection->privacy->name}}</i></div>
+            </div>
+
+        </div>     
+    </div>      
 @endforeach    
    
-<div class="col-md-3">
-<div class="panel panel-default">
-    <div class="panel-body text-center">
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".addcollection">Add Collection</button>       
-        
-    
-    </div>
-</div>     
-</div>
+
     
 </div>
 
