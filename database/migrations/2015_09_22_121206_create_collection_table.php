@@ -19,6 +19,7 @@ class CreateCollectionTable extends Migration
             $table->string('title');
             $table->string('description');
             $table->string('image');
+            $table->integer('privacy_id')->default(1);
             $table->timestamps();
         });
     }

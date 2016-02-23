@@ -2,8 +2,8 @@
 
 @section('content')
 
-
-<div class="col-md-6">
+<div class="container">
+<div class="col-md-6 card">
 <h2>Sign In</h2>
 
 
@@ -23,9 +23,11 @@
       <input type="checkbox"> Remember Me
     </label>
   </div>
-    <button type="submit" class="btn btn-default">Sign In</button>
+    <button type="submit" class="btn btn-md btn-primary">Sign In</button>
     <input type="hidden" name="_token" value="{{Session::token()}}" />
 </form>
+    
+</div>
 </div>
 
 @stop

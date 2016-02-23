@@ -39,6 +39,14 @@ class CreateCollections extends Migration
             $table->string('name');
             $table->timestamps();
         });
+        
+        DB::table('privacies')->insert(
+        array('name' => 'Public')
+        );
+        DB::table('privacies')->insert(
+        array('name' => 'Private')
+        );
+        
     }
 
     /**

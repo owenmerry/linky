@@ -3,16 +3,18 @@
 @section('content')
 
 
-<div class="col-md-6 col-md-offset-3"> 
+<div class="addlink">
+<div class="content"> 
 <form method="post" action="{{route('link.addlink')}}">    
 <div class="form-group">
-  <h3>Add website bookmark</h3>
+  <h1>Add website bookmark</h1>
     <input type="text" class="form-control" name="url" placeholder="Paste website link here" />
   </div>
-    <button class="btn btn-default">Add Link</button>
-    <button name="link_mode" value="preview" class="btn btn-default">Add Link &amp; Preview</button>
+    <button class="btn btn-md btn-primary">Add Link</button>
+    <button name="link_mode" value="preview" class="btn btn-md btn-primary">Add Link &amp; Preview</button>
     <input type="hidden" name="_token" value="{{Session::token()}}" />
 </form>
+</div>
 </div>
 
 

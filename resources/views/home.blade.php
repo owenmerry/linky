@@ -5,14 +5,42 @@
 
 @section('content')
 
-<div class="container">
 
 
-<h1>Homepage</h1>
-        <p class="lead">Use this document as a way to quickly start any new project.<br> All you get is this text and a mostly barebones HTML document.</p>
 
 
+
+<!--## portal - start ##-->
+<div class="section portal">
+    <div class="content">
+        <h1>Social media for bookmarks</h1>
+        <p>
+        All your favourite bookmarks on any device and share with the world 
+        </p>
+        <a href="signup.html" class="btn btn-lg btn-primary" >Sign up for FREE</a>
     </div>
+</div>    
+<!--## portal - end ##--> 
+
+
+<!--## aboutus - start ##-->
+<div class="section aboutus">
+    <div class="row">
+        <div class="col-md-6">
+    <div class="content">
+        <h1>Social media for bookmarks</h1>
+        <p>
+        All your favourite bookmarks on any device and share with the world 
+        </p>
+        <a href="signup.html" class="btn btn-lg btn-primary" >Sign up for FREE</a>
+    </div>
+        </div>
+        <div class="col-md-6">
+        &nbsp;
+        </div>
+    </div>
+</div>    
+<!--## aboutus - end ##--> 
 
 
 @stop

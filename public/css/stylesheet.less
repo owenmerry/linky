@@ -1,0 +1,208 @@
+/* variables*/
+@purple:#BB4773;
+@grey:#d7d7d7;
+@white:#fff;
+@black:#000;
+@lightgrey:#F4F4F4;
+
+@blue:#25c3ef;
+@orange:#ff982e;
+@darkgrey:#5c7786;
+
+@container:960px;
+
+
+/*
+###############################################################
+*/
+
+/* main */
+.container{max-width:1155px;}
+body{font-family: 'lato', sans-serif;background-color:@lightgrey;}
+
+/* navigation */
+.navbar,.navbar-default.navbar{
+    min-height:116px;
+    -webkit-box-shadow: 0 0px 0px rgba(0,0,0,0);
+    box-shadow: 0 0px 0px rgba(0,0,0,0);
+    font-size:16px;
+    font-weight:bold;
+    margin-bottom:0px;
+    .navbar-brand{
+        min-height:116px;
+        padding:25px 20px;}
+    ul{margin-right:20px;}
+    li>a{
+        text-align:center;
+        padding-right:50px;
+        padding-left:50px;
+        color:@black;
+        line-height:75px;
+        border-left:solid 1px @white;
+        border-right:solid 1px @white;
+    }
+    li>a:hover,li>a:focus{
+        color:lighten(@black,50%);
+        border-left:solid 1px @grey;
+        border-right:solid 1px @grey;
+    }
+    li>a.boxed{
+        background-color:@blue;
+        color:@white;
+        height: 52px;
+        line-height: 9px;
+        margin-top: 31px;
+        border-radius:10px;
+        padding-left: 25px;
+        padding-right: 25px;
+        text-align:center;
+    }
+    li>a.boxed:hover,li>a.boxed:focus{
+        background-color:lighten(@blue,10);
+    }
+    li>a.selected{color:@blue;}
+
+    
+    .links{
+        text-transform: uppercase;
+    }
+}
+
+/*section*/
+.section{
+    p{font-size:20px;}
+    
+}
+/* footer */
+.footer{
+    background-color:@blue;
+    padding:60px;
+    font-size:20px;
+    line-height:50px;
+    text-align:right;
+    background-image:url('../images/pattern-blue.jpg');
+    a{color:@white;font-weight:bold;}
+    ul li{overflow: hidden;}
+    ul{border-right:solid 3px lighten(@white,10%);padding-right:50px;}
+}
+
+/*
+###############################################################
+*/
+/* change defaults*/
+.btn-lg{
+    padding: 30px 46px;
+    font-size: 22px;
+    font-weight:bold;
+}
+.btn-md{
+    padding: 11px 43px;
+    font-size: 20px;
+    font-weight:bold;
+}
+.btn-sm{
+    padding: 8px 38px;
+    font-size: 18px;
+    font-weight:bold;
+}
+.btn{background-color:@blue;}
+/* change nouislider */
+.noUi-connect{background-color:@blue;}
+/* bootstrap-switch */
+.bootstrap-switch .bootstrap-switch-handle-off.bootstrap-switch-primary, .bootstrap-switch .bootstrap-switch-handle-on.bootstrap-switch-primary
+{background-color:@blue;}
+
+/*
+###############################################################
+*/
+
+/* Home page */
+.portal{
+    .section;
+    h1{color:@white;font-weight:bold;}
+    .content{padding-top:160px;max-width:@container;display:inline-block;}
+    text-align:center;
+    height:650px;
+    background-color:@purple;
+    background-image:url('../images/home-portal.jpg');
+    background-size: cover;
+    color:@white;
+}
+
+.aboutus{
+    .section;
+    h1{color:@white;font-weight:bold;}
+    .content{padding-top:160px;max-width:@container;display:inline-block;}
+    text-align:center;
+    height:650px;
+    background-color:@orange;
+    color:@white;
+}
+
+
+/* recents */
+.addlink{
+    h1{color:@white;font-weight:bold;}
+    .content{padding-top:160px;max-width:@container;display:inline-block;}
+    text-align:center;
+    height:650px;
+    background-color:@orange;
+    color:@white;
+}
+
+
+
+/*
+###############################################################
+*/
+
+/* reuse */
+.divider{
+        content:' ';
+        display:block;
+        margin:30px auto;
+        border-bottom:3px solid @grey;
+        width:145px; 
+}
+.quote{
+    padding-top:120px;
+    padding-bottom:100px;
+    background-color:@blue;
+    color:@white;
+    text-align:center;
+    background-image:url('../images/quote-clare.jpg');
+    background-size:cover;
+    background-position: center center;
+    .words{font-size:26px;font-weight:bold;}
+    .name{fontsize:20px;font-style: italic;}
+    .words:after{
+        .divider;
+        border-color:@white;
+    }    
+}
+
+.card{
+        background-color:@white;
+        box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
+        margin:0px auto;
+        margin-top:100px;
+        float:none;
+        border:solid 1px @grey;
+        border-radius:3px;
+        padding:40px 50px;
+        text-align:left;
+    h2,h3{
+        margin-top:10px;
+        text-align:center;
+        font-size:35px;
+        font-weight:bold;
+        line-height:60px;
+    }
+    h2:after,h3:after{.divider;width:40px;}  
+    h3{font-size:25px;line-height:40px;}
+    h4{color:@blue;}
+    }
+
+
+
+

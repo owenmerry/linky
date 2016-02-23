@@ -11,7 +11,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <!-- Bootstrap -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"> 
-    <link rel="stylesheet" href="https://bootswatch.com/paper/bootstrap.min.css">  
+    <link rel="stylesheet" href="{{asset('css/paper-boot.css')}}">  
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -20,7 +20,10 @@
     <![endif]-->
     <!--sweet alerts-->  
     <link rel="stylesheet" href="{{asset('frameworks/sweetalert/sweetalert.css')}}">  
-    <!--custom-->  
+    <!--custom-->
+        <link rel="stylesheet/less" type="text/css" href="../../../css/stylesheet.less"> 
+    <!-- Less compiler-->
+    <script src="{{asset('frameworks/less/less.min.js')}}"></script>  
     <link rel="stylesheet" href="{{asset('css/stylesheet.css')}}">  
 
   </head>
@@ -30,11 +33,11 @@
      
 @include('templates.partials.navigation')            
       
-<div class="container"> 
+
 @include('templates.partials.alerts')    
     
 @yield('content')      
-</div>      
+     
 
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>

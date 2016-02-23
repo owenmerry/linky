@@ -3,7 +3,8 @@
 @section('content')
 
 
-<div class="col-md-6">
+<div class="container">
+<div class="col-md-6 card">
 <h2>Sign Up</h2>
 
 
@@ -23,9 +24,11 @@
     <input type="password" class="form-control" name="password" placeholder="Password">
       @if($errors->has('password'))<div class="help-block">{{$errors->first('password')}}</div>@endif
   </div>
-    <button type="submit" class="btn btn-default">Sign Up</button>
+    <button type="submit" class="btn btn-md btn-primary">Sign Up</button>
     <input type="hidden" name="_token" value="{{Session::token()}}" />
 </form>
+    
+</div>
 </div>
 
 
